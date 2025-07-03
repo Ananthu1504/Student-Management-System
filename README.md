@@ -20,7 +20,7 @@ A Full Stack Student Management System built using Flask. This project enables a
 - **Frontend:** HTML, CSS, Bootstrap  
 - **Backend:** Python (Flask)  
 - **Database:** MySQL 
-- **Tools:** Git, GitHub,
+- **Tools:** Git, GitHub
 
 ---
 
