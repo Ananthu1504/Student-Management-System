@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Edit Student{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Edit Student Details</h2>
+  <form method="POST" action="{{ url_for('edit', id=student.id) }}">
+    <div class="row g-3">
+
+      <!-- Name -->
+      <div class="col-md-6">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" type="text" name="name" class="form-control" value="{{ student.name }}" required>
+      </div>
+
+      <!-- Gender -->
+      <div class="col-md-3">
+        <label for="gender" class="form-label">Gender</label>
+        <select id="gender" name="gender" class="form-select" required>
+          <option value="Male" {% if student.gender=='Male' %}selected{% endif %}>Male</option>
+          <option value="Female" {% if student.gender=='Female' %}selected{% endif %}>Female</option>
+        </select>
+      </div>
+
+      <!-- Age -->
+      <div class="col-md-3">
+        <label for="age" class="form-label">Age</label>
+        <input id="age" type="number" name="age" class="form-control" value="{{ student.age }}" required>
+      </div>
+
+      <!-- Class -->
+      <div class="col-md-3">
+        <label for="class" class="form-label">Class</label>
+        <select id="class" name="class" class="form-select" required>
+          {% for c in range(6, 11) %}
+          <option value="{{ c }}" {% if student.class==c %}selected{% endif %}>{{ c }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Section -->
+      <div class="col-md-3">
+        <label for="section" class="form-label">Section</label>
+        <select id="section" name="section" class="form-select" required>
+          <option value="A" {% if student.section=='A' %}selected{% endif %}>A</option>
+          <option value="B" {% if student.section=='B' %}selected{% endif %}>B</option>
+          <option value="C" {% if student.section=='C' %}selected{% endif %}>C</option>
+        </select>
+      </div>
+
+      <!-- Roll Number -->
+      <div class="col-md-3">
+        <label for="roll_no" class="form-label">Roll Number</label>
+        <input id="roll_no" type="number" name="roll_no" class="form-control" value="{{ student.roll_no }}" required>
+      </div>
+
+      <!-- Attendance -->
+      <div class="col-md-3">
+        <label for="attendance" class="form-label">Attendance (%)</label>
+        <input id="attendance" type="number" name="attendance" class="form-control" value="{{ student.attendance }}" required>
+      </div>
+
+      <!-- Marks -->
+      <div class="col-md-3">
+        <label for="marks" class="form-label">Marks</label>
+        <input id="marks" type="number" name="marks" class="form-control" value="{{ student.marks }}" required>
+      </div>
+
+    </div>
+
+    <div class="mt-4 text-end">
+      <button type="submit" class="btn btn-primary">Update Student</button>
+      <a href="{{ url_for('index') }}" class="btn btn-secondary ms-2">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

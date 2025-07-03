@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Notifications</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <a href="{{ url_for('login_admin') }}" class="btn btn-secondary mb-3">← Go Back to Admin Dashboard</a>
+
+        <h2 class="mb-4">Add Notification</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" class="form-control" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message:</label>
+                <textarea class="form-control" name="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Notification</button>
+        </form>
+
+        <hr class="my-5">
+
+        <h3 class="mb-3">Posted Notifications</h3>
+        {% if notifications %}
+            <ul class="list-group">
+                {% for note in notifications %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 style="color: #1a237e;">{{ note.title }}</h5>
+                            <p class="mb-1">{{ note.message }}</p>
+                            <small class="text-muted">{{ note.created_at }}</small>
+                        </div>
+                        <a href="{{ url_for('delete_notification', id=note.id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this notification?');">Delete</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-muted">No notifications posted yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

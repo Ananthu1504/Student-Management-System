@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<div class="text-center mt-5">
+  <h1>Welcome to the Student Management System</h1>
+  <div class="mt-4">
+    <a href="{{ url_for('login_admin') }}" class="btn btn-primary me-2">Admin Login</a>
+    <a href="{{ url_for('login_guest') }}" class="btn btn-secondary">Guest Login</a>
+  </div>
+</div>
+{% endblock %}

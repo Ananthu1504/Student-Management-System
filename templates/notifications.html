@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Notifications{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">Notifications</h2>
+  {% if notifications %}
+    <ul class="list-group">
+      {% for note in notifications %}
+      <li class="list-group-item">
+        <h5 class="text-primary">{{ note['title'] }}</h5>
+        <p>{{ note['message'] }}</p>
+        <small class="text-muted">Posted on {{ note['created_at'] }}</small>
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No notifications available.</p>
+  {% endif %}
+  <a href="{{ url_for('welcome') }}" class="btn btn-secondary mt-3">Back to Home</a>
+</div>
+{% endblock %}
