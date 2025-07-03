@@ -57,3 +57,15 @@ student_mgmt_project/
 
 ### 🔹 Edit Notifications Page (Admin View)
 ![Edit Notifications](assets/edit_notifications.png)
+
+---
+
+## 👨‍💻 Author
+
+- **Ananthu Krishna G**
+
+---
+
+## 📜 License
+
+This project was developed for academic purposes as part of a full stack Python course. Free to use and modify with credit.
