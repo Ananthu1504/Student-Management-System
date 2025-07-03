@@ -26,13 +26,15 @@ A Full Stack Student Management System built using Flask. This project enables a
 
 ## 📁 Project Structure
 
+```
 student_mgmt_project/
 ├── app.py                  # Main Flask application file
-├── templates/              # HTML files (like welcome.html, login.html, etc.)
+├── templates/              # HTML templates (frontend pages)
 │   ├── welcome.html
 │   ├── login.html
 │   └── ...
 ├── sql database/           # SQL dump or DB-related scripts
-├── static/                 # (Optional) CSS or JS files if you used them
+├── static/                 # Static files like CSS or JS (if any)
 ├── .gitignore              # Git ignore rules
 └── README.md               # Project description file
+```
