@@ -38,3 +38,22 @@ student_mgmt_project/
 ├── .gitignore              # Git ignore rules
 └── README.md               # Project description file
 ```
+
+---
+
+## 📸 Screenshots
+
+### 🔹 Home Page
+![Home Page](assets/homepage.png)
+
+### 🔹 Admin Login
+![Admin Login](assets/admin_login.png)
+
+### 🔹 Admin Dashboard (Student List)
+![Admin Dashboard](assets/admin_dashboard.png)
+
+### 🔹 Notifications Page (Guest View)
+![Notifications](assets/notifications.png)
+
+### 🔹 Edit Notifications Page (Admin View)
+![Edit Notifications](assets/edit_notifications.png)
